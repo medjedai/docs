@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://docs.medjed.ai',
 	integrations: [
 		starlight({
 			title: 'Medjed AI', // 保留title配置，用于元数据等
@@ -14,13 +15,24 @@ export default defineConfig({
 				replacesTitle: true, // 使logo替换标题显示
 				darkSrc: './public/favicon.svg', 
 			},
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/medjedai' }],
+			social: [{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/WB2qdPmbpA' },{ icon: 'github', label: 'GitHub', href: 'https://github.com/medjedai' }],
+			editLink: {
+        baseUrl: 'https://github.com/medjedai/docs/edit/main/docs/',},
 			sidebar: [
 				{
 					label: 'Guides',
 					collapsed: false,
 					items: [
-						{ label: 'Example Guide', slug: '' },
+						{ label: 'Introduction', slug: '' },
+						{ label: 'Quickstart', slug: 'guides/quickstart' },
+					],
+				},
+								{
+					label: 'Instances',
+					collapsed: false,
+					items: [
+						{ label: 'Introduction', slug: '' },
+						{ label: 'Quickstart', slug: 'guides/quickstart' },
 					],
 				},
 				{
