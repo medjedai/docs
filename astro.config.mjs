@@ -86,8 +86,9 @@ export default defineConfig({
 					},
 					{
 						label: 'Reference',
+						collapsed: false,
 						autogenerate: { directory: 'reference' },
-					},
+					}
 				],
 		}),
 	],
