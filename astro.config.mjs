@@ -50,7 +50,7 @@ export default defineConfig({
 				Header: './src/components/Header.astro'
 			},
 			editLink: {
-				baseUrl: 'https://github.com/medjedai/docs/edit/main/docs/'
+				baseUrl: 'https://github.com/medjedai/docs/edit/main/'
 			},
 			// 基础 SEO 配置
 			head: [
