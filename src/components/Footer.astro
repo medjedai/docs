@@ -3,80 +3,13 @@
 import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
 ---
 
-<!-- 使用默认页脚作为基础 -->
+<!-- 使用默认页脚并添加英伟达图标 -->
 <DefaultFooter />
-
-<!-- 添加底部介绍 -->
-<footer class="sl-footer-intro">
+<footer class="sl-footer">
   <div class="sl-container">
-    <div class="sl-footer-intro-bottom">
-      <p>&copy; {new Date().getFullYear()} Medjed AI. All rights reserved.</p>
+    <!-- NVIDIA Inception Program Badge -->
+    <div class="nvidia-badge-container" style="display: flex; justify-content: center; margin-bottom: 1rem;">
+      <img src="/nvidia-inception-program-badge-rgb-for-screen.svg" alt="NVIDIA Inception Program" class="nvidia-badge" style="max-width: 200px; height: auto;" />
     </div>
   </div>
 </footer>
-
-<style>
-  @layer starlight.core {
-    .sl-footer-intro {
-      background-color: var(--sl-color-background);
-      border-top: 1px solid var(--sl-color-border);
-      padding: 2rem 0;
-      margin-top: 2rem;
-    }
-    
-    .sl-footer-intro-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .sl-footer-intro-column h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--sl-color-text-accent);
-    }
-    
-    .sl-footer-intro-column h4 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--sl-color-text-accent);
-    }
-    
-    .sl-footer-intro-column p {
-      line-height: 1.6;
-      color: var(--sl-color-text);
-      margin-bottom: 1rem;
-    }
-    
-    .sl-footer-intro-column ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .sl-footer-intro-column li {
-      margin-bottom: 0.5rem;
-    }
-    
-    .sl-footer-intro-column a {
-      color: var(--sl-color-text);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    
-    .sl-footer-intro-column a:hover {
-      color: var(--sl-color-text-accent);
-    }
-    
-    .sl-footer-intro-bottom {
-      border-top: 1px solid var(--sl-color-border);
-      padding-top: 1rem;
-      text-align: center;
-      color: var(--sl-color-text-muted);
-      font-size: 0.875rem;
-    }
-  }
-</style>

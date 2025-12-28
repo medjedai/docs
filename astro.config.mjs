@@ -84,8 +84,6 @@ export default defineConfig({
 						collapsed: false,
 						autogenerate: { directory: 'instances' },
 					},
-					// Add the generated sidebar group to the sidebar.
-					...openAPISidebarGroups,
 					{
 						label: 'Reference',
 						autogenerate: { directory: 'reference' },
