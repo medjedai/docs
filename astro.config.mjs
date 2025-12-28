@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightOpenAPI, { openAPISidebarGroups } from 'starlight-openapi';
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,7 +45,9 @@ export default defineConfig({
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/medjedai', target: '_blank' }
 			],
 			components: {
-				SocialIcons: './src/components/SocialIcons.astro'
+				SocialIcons: './src/components/SocialIcons.astro',
+				Footer: './src/components/Footer.astro',
+				Header: './src/components/Header.astro'
 			},
 			editLink: {
 				baseUrl: 'https://github.com/medjedai/docs/edit/main/docs/'
@@ -55,6 +58,17 @@ export default defineConfig({
 				{ tag: 'meta', attrs: { name: 'author', content: 'Medjed AI Team' } },
 				{ tag: 'script', attrs: { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-7QXF8Z4HE8' } },
 				{ tag: 'script', attrs: {}, content: 'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'G-7QXF8Z4HE8\');' }
+			],
+			plugins: [
+				// Generate the OpenAPI documentation pages.
+				starlightOpenAPI([
+					{
+						base: 'api-reference',
+						schema: 'https://petstore.swagger.io/v2/swagger.json',
+						label: 'API Reference',
+						collapsed: false
+					}
+				])
 			],
 			sidebar: [
 					{
@@ -70,6 +84,8 @@ export default defineConfig({
 						collapsed: false,
 						autogenerate: { directory: 'instances' },
 					},
+					// Add the generated sidebar group to the sidebar.
+					...openAPISidebarGroups,
 					{
 						label: 'Reference',
 						autogenerate: { directory: 'reference' },

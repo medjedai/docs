@@ -1,0 +1,131 @@
+---
+// 导入Starlight默认组件
+import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
+import Search from '@astrojs/starlight/components/Search.astro';
+import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
+import SocialIcons from './SocialIcons.astro';
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
+
+// 导入配置
+import config from 'virtual:starlight/user-config';
+
+// 检查是否需要渲染搜索组件
+const shouldRenderSearch = config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+---
+
+<header class="sl-header">
+  <div class="sl-container">
+    <div class="sl-header-content">
+      <!-- 左侧：网站标题 -->
+      <div class="sl-header-left sl-flex">
+        <SiteTitle />
+      </div>
+
+      <!-- 中间：顶部导航菜单 -->
+      <nav class="sl-header-nav sl-flex">
+        <a href="https://medjed.ai/" class="sl-header-nav-link" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="/guides/quickstart" class="sl-header-nav-link">Guides</a>
+        <a href="/api-reference" class="sl-header-nav-link">API</a>
+        <a href="/reference" class="sl-header-nav-link">Reference</a>
+      </nav>
+
+      <!-- 右侧：搜索、社交图标、主题切换、语言切换 -->
+      <div class="sl-header-right sl-flex print:hidden">
+        {shouldRenderSearch && <Search />}
+        <div class="sl-flex social-icons">
+          <SocialIcons />
+        </div>
+        <ThemeSelect />
+        <LanguageSelect />
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  @layer starlight.core {
+    .sl-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      flex-wrap: nowrap;
+    }
+
+    .sl-header-nav {
+      gap: 0.5rem;
+      margin: 0 auto;
+      flex-shrink: 0;
+    }
+
+    .sl-header-nav-link {
+      color: var(--sl-color-text-muted);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--sl-radius-sm);
+      transition: background-color var(--sl-transition-fast), color var(--sl-transition-fast), transform var(--sl-transition-fast);
+      font-size: 0.9rem;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sl-header-nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: var(--sl-color-text-accent);
+      transition: width 0.3s ease, left 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .sl-header-nav-link:hover {
+      color: var(--sl-color-text-accent);
+      transform: translateY(-1px);
+      background-color: rgba(var(--sl-color-accent-rgb), 0.05);
+    }
+
+    .sl-header-nav-link:hover::after {
+      width: 80%;
+      left: 50%;
+    }
+
+    .sl-header-nav-link.active {
+      color: var(--sl-color-text-accent);
+      font-weight: 600;
+    }
+
+    .sl-header-nav-link.active::after {
+      width: 80%;
+      left: 50%;
+    }
+
+    /* 右侧区域布局 */
+    .sl-header-right {
+      gap: 0.5rem;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    /* 调整搜索组件样式，避免占据过多空间 */
+    .sl-header-right :global(.sl-search) {
+      margin: 0;
+    }
+
+    /* 社交图标容器 */
+    .sl-header-right .social-icons {
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .sl-header-nav {
+        display: none;
+      }
+    }
+  }
+</style>
