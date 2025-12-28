@@ -40,9 +40,12 @@ export default defineConfig({
 				darkSrc: './public/favicon.svg', 
 			},
 			social: [
-				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/WB2qdPmbpA' },
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/medjedai' }
+				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/WB2qdPmbpA', target: '_blank' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/medjedai', target: '_blank' }
 			],
+			components: {
+				SocialIcons: './src/components/SocialIcons.astro'
+			},
 			editLink: {
 				baseUrl: 'https://github.com/medjedai/docs/edit/main/docs/'
 			},
