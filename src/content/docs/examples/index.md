@@ -9,7 +9,6 @@ Welcome to the Medjed AI examples section. Here you'll find various examples dem
 
 ## Available Examples
 
-- [Billing Information](./billing-information/)
-- [FAQ](./faq/)
-- [Glossary](./glossary/)
-- [Referrals](./referrals/)
+- [FAQ](faq)
+- [Glossary](glossary)
+- [Referrals](referrals)
