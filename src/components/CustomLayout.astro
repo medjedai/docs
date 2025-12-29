@@ -1,0 +1,47 @@
+---
+// 自定义布局组件，用于调整侧边栏位置
+import DefaultLayout from '@astrojs/starlight/layouts/Page.astro';
+---
+
+<DefaultLayout {...Astro.props}>
+  <slot/>
+</DefaultLayout>
+
+<style is:global>
+  @layer starlight.core {
+    /* 调整主布局，将目录移到左边 */
+    @media (min-width: 50em) {
+      .sl-page {
+        display: grid;
+        grid-template-columns: var(--sl-sidebar-width) 1fr var(--sl-aside-width);
+        grid-template-areas: "sidebar content toc";
+      }
+      
+      /* 交换侧边栏和目录的位置 */
+      .sl-sidebar {
+        grid-area: toc;
+      }
+      
+      .sl-aside {
+        grid-area: sidebar;
+      }
+      
+      /* 调整内容区域 */
+      .sl-content {
+        grid-area: content;
+      }
+      
+      /* 调整目录样式 */
+      .sl-aside {
+        border-right: var(--sl-color-border);
+        border-left: none;
+      }
+      
+      /* 调整主侧边栏样式 */
+      .sl-sidebar {
+        border-left: var(--sl-color-border);
+        border-right: none;
+      }
+    }
+  }
+</style>

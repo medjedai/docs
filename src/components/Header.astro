@@ -43,6 +43,43 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
 
 <style>
   @layer starlight.core {
+    /* 调整主布局，将目录移到左边 */
+    @media (min-width: 50em) {
+      /* 重置grid布局 */
+      .sl-page {
+        display: flex;
+        flex-direction: row;
+      }
+      
+      /* 调整顺序：目录 -> 内容 -> 主侧边栏 */
+      .sl-page > * {
+        order: 2;
+      }
+      
+      /* 目录放在最左边 */
+      .sl-page > .sl-aside {
+        order: 1;
+        width: var(--sl-aside-width);
+        border-right: 1px solid var(--sl-color-border);
+        border-left: none;
+      }
+      
+      /* 主侧边栏放在最右边 */
+      .sl-page > .sl-sidebar {
+        order: 3;
+        width: var(--sl-sidebar-width);
+        border-left: 1px solid var(--sl-color-border);
+        border-right: none;
+      }
+      
+      /* 内容区域占满剩余空间 */
+      .sl-page > .sl-content {
+        flex: 1;
+        order: 2;
+      }
+    }
+    
+    /* 头部样式 */
     .sl-header-content {
       display: flex;
       align-items: center;
