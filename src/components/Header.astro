@@ -24,7 +24,7 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
       <!-- 中间：顶部导航菜单 -->
       <nav class="sl-header-nav sl-flex">
         <a href="https://medjed.ai/" class="sl-header-nav-link" target="_blank" rel="noopener noreferrer">Home</a>
-        <a href="/guides/quickstart" class="sl-header-nav-link">Examples</a>
+        <a href="/examples" class="sl-header-nav-link">Examples</a>
         <a href="/api-reference" class="sl-header-nav-link">API</a>
       </nav>
 
@@ -162,6 +162,11 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
       .sl-header-nav {
         display: none;
       }
+    }
+    
+    /* 隐藏侧边栏summary元素（分组标签） */
+    .sl-sidebar summary {
+      display: none;
     }
   }
 </style>

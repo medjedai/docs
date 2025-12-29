@@ -71,25 +71,30 @@ export default defineConfig({
 				])
 			],
 			sidebar: [
-					{
-						label: 'Guides',
-						collapsed: false,
-						items: [
-							{ label: 'Introduction', slug: '' },
-							{ label: 'Quickstart', slug: 'guides/quickstart' },
-						],
-					},
-					{
-						label: 'Instances',
-						collapsed: false,
-						autogenerate: { directory: 'instances' },
-					},
-					{
-						label: 'Reference',
-						collapsed: false,
-						autogenerate: { directory: 'reference' },
-					}
-				],
+						{
+							label: 'Guides',
+							collapsed: false,
+							items: [
+								{ label: 'Introduction', slug: '' },
+								{ label: 'Quickstart', slug: 'guides/quickstart' },
+							],
+						},
+						{
+							label: 'Instances',
+							collapsed: false,
+							autogenerate: { directory: 'instances' },
+						},
+						{
+							label: 'Examples',
+							collapsed: false,
+							autogenerate: { directory: 'examples' },
+						},
+						{
+							label: 'Reference',
+							collapsed: false,
+							autogenerate: { directory: 'reference' },
+						}
+					],
 		}),
 	],
 });
