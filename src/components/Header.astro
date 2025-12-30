@@ -158,9 +158,15 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
     }
 
     /* 响应式设计 */
-    @media (max-width: 768px) {
-      .sl-header-nav {
-        display: none;
+    @media (max-width: 49.999em) {
+      /* 隐藏中间导航菜单 */
+      :global(.sl-header-nav) {
+        display: none !important;
+      }
+      
+      /* 在移动端隐藏右侧内容（搜索、社交图标、主题切换、语言切换） */
+      :global(.sl-header-right) {
+        display: none !important;
       }
     }
     
