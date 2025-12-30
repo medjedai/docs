@@ -68,26 +68,26 @@ const PAGE_TITLE_ID = '_top';
 </svg>
   </button>
   
-  <!-- 复制Markdown内容的JavaScript代码 -->
-  <script>
+  <!-- 复制页面内容到剪贴板 -->
+  <script is:inline>
     async function copyMarkdownContent() {
       try {
-        // 构建GitHub原始文件URL
-        const filePath = `${Astro.locals.starlightRoute.entry.id}.md`;
-        const rawUrl = `https://raw.githubusercontent.com/medjedai/docs/main/src/content/docs/${filePath}`;
+        // 获取当前页面的标题和主内容
+        const title = document.querySelector('h1').textContent;
+        const contentElement = document.querySelector('.sl-markdown-content');
         
-        // 发送请求获取原始Markdown内容
-        const response = await fetch(rawUrl);
-        
-        if (!response.ok) {
-          throw new Error(`Failed to fetch file: ${response.status}`);
+        if (!contentElement) {
+          throw new Error('Content element not found');
         }
         
-        // 获取文件内容
-        const content = await response.text();
+        // 获取内容文本
+        const content = contentElement.textContent;
+        
+        // 构建Markdown格式的内容
+        const markdownContent = `# ${title}\n\n${content}`;
         
         // 复制到剪贴板
-        await navigator.clipboard.writeText(content);
+        await navigator.clipboard.writeText(markdownContent);
         
         // 显示成功提示
         alert('Markdown content copied to clipboard!');
