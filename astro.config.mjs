@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightOpenAPI, { openAPISidebarGroups } from 'starlight-openapi';
+import starlightGiscus from 'starlight-giscus';
 
 // https://astro.build/config
 export default defineConfig({
@@ -69,7 +70,14 @@ export default defineConfig({
 						label: 'API Reference',
 						collapsed: false
 					}
-				])
+				]),
+				// Configure Giscus comments
+				starlightGiscus({
+					repo: 'medjedai/docs',
+					repoId: 'R_kgDOPFSM_g',
+					category: 'Q&A',
+					categoryId: 'DIC_kwDOPFSM_s4C0YkD'
+				})
 			],
 			sidebar: [
 						{
