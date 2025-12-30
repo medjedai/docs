@@ -47,7 +47,8 @@ export default defineConfig({
 			components: {
 				SocialIcons: './src/components/SocialIcons.astro',
 				Footer: './src/components/Footer.astro',
-				Header: './src/components/Header.astro'
+				Header: './src/components/Header.astro',
+				PageTitle: './src/components/CustomPageTitle.astro'
 			},
 			editLink: {
 				baseUrl: 'https://github.com/medjedai/docs/edit/main/'
