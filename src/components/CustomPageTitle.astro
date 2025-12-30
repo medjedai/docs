@@ -48,14 +48,12 @@ const PAGE_TITLE_ID = '_top';
 </svg>
   </a>
   
-  <!-- 跳转到GitHub文件按钮 -->
-  <a 
-    href={`https://github.com/medjedai/docs/blob/main/src/content/docs/${Astro.locals.starlightRoute.entry.id}.md`} 
-    target="_blank" 
-    rel="noopener noreferrer" 
+  <!-- 复制Markdown内容按钮 -->
+  <button 
     class="ai-tool-link" 
-    aria-label="View on GitHub" 
-    title="View on GitHub"
+    aria-label="Copy Markdown content" 
+    title="Copy Markdown content"
+    onclick="copyMarkdownContent()"
   >
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
  <g clip-path="url(#clip0_10485_874)">
@@ -68,7 +66,38 @@ const PAGE_TITLE_ID = '_top';
  </clipPath>
  </defs>
 </svg>
-  </a>
+  </button>
+  
+  <!-- 复制Markdown内容的JavaScript代码 -->
+  <script>
+    async function copyMarkdownContent() {
+      try {
+        // 构建GitHub原始文件URL
+        const filePath = `${Astro.locals.starlightRoute.entry.id}.md`;
+        const rawUrl = `https://raw.githubusercontent.com/medjedai/docs/main/src/content/docs/${filePath}`;
+        
+        // 发送请求获取原始Markdown内容
+        const response = await fetch(rawUrl);
+        
+        if (!response.ok) {
+          throw new Error(`Failed to fetch file: ${response.status}`);
+        }
+        
+        // 获取文件内容
+        const content = await response.text();
+        
+        // 复制到剪贴板
+        await navigator.clipboard.writeText(content);
+        
+        // 显示成功提示
+        alert('Markdown content copied to clipboard!');
+      } catch (error) {
+        // 处理错误情况
+        console.error('Copy failed:', error);
+        alert('Copy failed. Please copy the content manually.');
+      }
+    }
+  </script>
 </div>
 
 <style>
@@ -104,6 +133,8 @@ const PAGE_TITLE_ID = '_top';
       color: var(--sl-color-text);
       transition: all var(--sl-transition-fast);
       text-decoration: none;
+      /* 初始状态颜色变淡 */
+      opacity: 0.8;
     }
     
     /* AI工具链接悬停效果 */
@@ -111,6 +142,17 @@ const PAGE_TITLE_ID = '_top';
       border-color: var(--sl-color-border-hover);
       color: var(--sl-color-text-accent);
       background-color: var(--sl-color-hover);
+      /* 悬停时恢复正常不透明度 */
+      opacity: 1;
+    }
+    
+    /* AI工具链接点击效果 */
+    .ai-tool-link:active {
+      /* 点击时颜色变深 */
+      opacity: 1;
+      background-color: var(--sl-color-border-hover);
+      border-color: var(--sl-color-border-accent);
+      transform: scale(0.95);
     }
     
     /* 响应式设计 */
@@ -132,6 +174,11 @@ const PAGE_TITLE_ID = '_top';
         background-color: var(--sl-color-hover-dark);
         border-color: var(--sl-color-border-hover-dark);
         color: var(--sl-color-text-accent-dark);
+      }
+      
+      .ai-tool-link:active {
+        background-color: var(--sl-color-border-hover-dark);
+        border-color: var(--sl-color-border-accent-dark);
       }
     }
   }
