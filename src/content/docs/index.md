@@ -61,7 +61,7 @@ medjed.ai’s mission is to democratize access to AI infrastructure. We believe 
 Need help or have questions? We’re here to assist you:
 
 - **Support Chat** → Available 24/7 in the bottom-right corner of our console
-- **Email** → contact@medjed.ai
+- **Email** → help@medjed.ai
 - **Discord** → Join our community for help and discussions
 - **Documentation** → Browse our guides, API reference, and troubleshooting tips
 
