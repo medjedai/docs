@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightOpenAPI, { openAPISidebarGroups } from 'starlight-openapi';
 import starlightGiscus from 'starlight-giscus';
+import starlightLlmsTxt from 'starlight-llms-txt';
 
 // https://astro.build/config
 export default defineConfig({
@@ -77,7 +78,9 @@ export default defineConfig({
 					repoId: 'R_kgDOPFSM_g',
 					category: 'Q&A',
 					categoryId: 'DIC_kwDOPFSM_s4C0YkD'
-				})
+				}),
+				// Generate llms.txt files
+				starlightLlmsTxt()
 			],
 			sidebar: [
 						{
