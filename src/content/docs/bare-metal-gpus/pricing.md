@@ -70,6 +70,35 @@ Our bare metal GPU servers are available with 1-month, 6-month, and 12-month lea
 - Advanced deep learning research
 - High-throughput inference serving
 
+### H200-HGX-SpectrumX Bare Metal Server
+
+**Configuration ID**: H200-HGX-SPECTRUMX-BM
+
+#### Key Specifications
+| Component | Details |
+|-----------|---------|
+| **GPU** | NVIDIA H200 SXM × 8 |
+| **CPU** | Dual Xeon SPR 8460Y+ |
+| **CPU Cores** | 80 cores (2.00 - 3.70 GHz) |
+| **Memory** | 2 TB (64GB × 32) DDR5 ECC RDIMM |
+| **Storage** | - OS area: 439 GB NVMe (RAID 1, mount point: /)<br>- Home area: 880 GB NVMe (No RAID, mount point: /home)<br>- Data area: 14 TB NVMe (RAID 0, mount point: /raid) |
+| **Network** | - Bandwidth: Shared<br>- IP: Shared (no public IP included) |
+| **Data Center** | Japan |
+| **Delivery Model** | Bare Metal |
+
+#### Pricing Details
+| Lease Term | Price per Month | Payment Structure | Effective Discount |
+|------------|----------------|-------------------|--------------------|
+| 1 Month | Contact sales for latest pricing | Monthly payment in advance | Contact sales |
+| 6 Months | Contact sales for latest pricing | 2-month deposit + 1 month upfront, remaining quarterly | Contact sales |
+| 12 Months | Contact sales for latest pricing | 2-month deposit + 3 months upfront, remaining quarterly | Contact sales |
+
+#### Ideal Workloads
+- Large language model (LLM) training and inference
+- Advanced generative AI applications
+- High-performance computing (HPC)
+- Data-intensive machine learning workloads
+
 ### RTX 5090 Founders Edition Bare Metal Server
 
 **Configuration ID**: RTX-5090-BM
@@ -97,6 +126,35 @@ Our bare metal GPU servers are available with 1-month, 6-month, and 12-month lea
 - Real-time inference
 - Gaming and virtual reality development
 - Content creation and video editing
+
+### RTX 4090 Bare Metal Server
+
+**Configuration ID**: RTX-4090-BM
+
+#### Key Specifications
+| Component | Details |
+|-----------|---------|
+| **GPU** | NVIDIA RTX 4090 24G × 8 |
+| **CPU** | Intel Xeon Platinum 8457C × 2 (48 cores × 2, 2.6-3.1 GHz) |
+| **Memory** | 768 GB DDR5 (48 GB × 16 modules) |
+| **Storage** | - Data: 7.68 TB NVMe SSD × 2 |
+| **Network** | - Bandwidth: Shared<br>- IP: Shared (no public IP included) |
+| **Data Center** | Taiwan |
+| **Delivery Model** | Bare Metal |
+
+#### Pricing Details
+| Lease Term | Price per Month | Payment Structure | Effective Discount |
+|------------|----------------|-------------------|--------------------|
+| 1 Month | Contact sales for latest pricing | Monthly payment in advance | Contact sales |
+| 6 Months | Contact sales for latest pricing | 2-month deposit + 1 month upfront, remaining quarterly | Contact sales |
+| 12 Months | Contact sales for latest pricing | 2-month deposit + 3 months upfront, remaining quarterly | Contact sales |
+
+#### Ideal Workloads
+- Mid-scale AI/ML training and inference
+- 3D rendering and animation
+- Video editing and post-production
+- Gaming and virtual reality development
+- Scientific computing and simulations
 
 ## Payment Information
 

@@ -40,6 +40,22 @@ Our bare metal GPU servers are dedicated, single-tenant servers with 8 GPUs of v
 | **Public Network** | 10 Gbps | - |
 | **Form Factor** | 4U Rackmount | 1 |
 
+### H200-HGX-SpectrumX Bare Metal Server
+
+| Component | Description | Quantity |
+|-----------|-------------|----------|
+| **GPU Module** | NVIDIA H200 SXM | 8 |
+| **GPU Interconnect** | NVIDIA NVLink technology | - |
+| **CPU** | Dual Xeon SPR 8460Y+ | 2 |
+| **CPU Cores** | 80 cores (2.00 - 3.70 GHz) | - |
+| **Memory** | 64GB DDR5 ECC RDIMM | 32 |
+| **Total Memory** | 2 TB DDR5 ECC | - |
+| **Storage** | - OS area: 439 GB NVMe<br>- Home area: 880 GB NVMe<br>- Data area: 14 TB NVMe | -<br>-<br>- |
+| **Storage Configuration** | - OS: RAID 1<br>- Home: No RAID<br>- Data: RAID 0 | -<br>-<br>- |
+| **Network Card** | - Bandwidth: Shared<br>- IP: Shared (no public IP included) | - |
+| **Data Center** | Japan | - |
+| **Form Factor** | 4U Rackmount | 1 |
+
 ### RTX 5090 Founders Edition Bare Metal Server
 
 | Component | Description | Quantity |
@@ -51,6 +67,18 @@ Our bare metal GPU servers are dedicated, single-tenant servers with 8 GPUs of v
 | **Total Memory** | 512 GB DDR5 ECC | - |
 | **Storage** | - System: 1 TB M.2 Gen4 NVMe SSD<br>- Data: 7.68 TB U.2 Gen4 NVMe SSD (DWPD1) | -<br>- |
 | **Form Factor** | 2U Rackmount | 1 |
+
+### RTX 4090 Bare Metal Server
+
+| Component | Description | Quantity |
+|-----------|-------------|----------|
+| **GPU Module** | NVIDIA RTX 4090 24G | 8 |
+| **CPU** | Intel Xeon Platinum 8457C | 2 |
+| **CPU Cores** | 48 cores × 2 (2.6-3.1 GHz) | - |
+| **Memory** | 48GB DDR5 | 16 |
+| **Total Memory** | 768 GB DDR5 | - |
+| **Storage** | Data: 7.68 TB NVMe SSD | 2 |
+| **Form Factor** | 4U Rackmount | 1 |
 
 ## Networking
 
