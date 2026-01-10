@@ -1,0 +1,83 @@
+---
+title: AI Tooling
+description: Learn about the AI tools available for working with our documentation and services.
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## llms.txt
+
+We have implemented `llms.txt`, `llms-small.txt`, and `llms-full.txt`, and also created per-page Markdown links as follows:
+
+* [`llms.txt`](/llms.txt) - Condensed overview of our documentation
+* [`llms-small.txt`](/llms-small.txt) - Detailed overview for LLMs with medium context windows
+* [`llms-full.txt`](/llms-full.txt) - Complete documentation for comprehensive access
+
+
+### Custom Documentation Sets
+
+We've created custom documentation sets to help you access specific sections of our docs:
+
+- **Bare Metal GPUs Documentation**: `/bare-metal-gpus/llms-full.txt` - Complete documentation for our bare metal GPU services
+- **Instances Documentation**: `/instances/llms-full.txt` - Documentation for our AI instances
+- **API Reference**: `/api-reference/llms-full.txt` - Complete API reference
+- **Guides and Tutorials**: `/guides/llms-full.txt` - Step-by-step guides and tutorials
+- **Reference Documentation**: `/reference/llms-full.txt` - General reference documentation
+
+## Managed MCP Servers
+
+We run a catalog of managed remote MCP Servers that you can connect to using OAuth on various clients:
+
+
+<Tabs>
+	<TabItem label="Cursor">
+
+    To install in Cursor, use this [Direct install link](cursor://anysphere.cursor-deeplink/mcp/install?name=Medjed.ai%20Documentation&config=eyJuYW1lIjoiTWVkamVkLmFpIERvY3VtZW50YXRpb24iLCJ1cmwiOiJodHRwczovL2RvY3MubWVkamVkLmFpL21jcC5qc29uIn0=).
+
+    </TabItem>
+    <TabItem label="VSCode">
+
+    To install in VSCode, use this [Direct install link](vscode:mcp/install?%7B%22name%22%3A%22Medjed%20MCP%20Documentation%22%2C%22url%22%3A%22https%3A%2F%2Fdocs.medjed.ai%2Fmcp.json%22%7D).
+
+    </TabItem>
+    <TabItem label="Manually">
+
+    To install manually, add the following specification to your MCP config:
+
+    ```json
+{
+  "server": {
+    "name": "Medjed AI Documentation",
+    "version": "1.0.0",
+    "transport": "http"
+  },
+  "capabilities": {
+    "tools": {
+      "SearchMedjedAiDocumentation": {
+        "name": "SearchMedjedAiDocumentation",
+        "description": "Search across the Medjed AI Documentation knowledge base to find relevant information, code examples, API references, and guides. Use this tool when you need to answer questions about Medjed AI Documentation, find specific documentation, understand how features work, or locate implementation details. The search returns contextual content with titles and direct links to the documentation pages.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "A query to search the content with."
+            }
+          },
+          "required": [
+            "query"
+          ]
+        },
+        "operationId": "MintlifyDefaultSearch"
+      }
+    },
+    "resources": [],
+    "prompts": []
+  }
+}
+    ```
+
+    </TabItem>
+
+</Tabs>
+These servers provide secure access to our AI services and documentation, allowing you to integrate our offerings with your preferred AI workflows.
