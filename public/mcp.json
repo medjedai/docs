@@ -21,7 +21,7 @@
             "query"
           ]
         },
-        "operationId": "MintlifyDefaultSearch"
+        "operationId": "StarlightSearch"
       }
     },
     "resources": [],
