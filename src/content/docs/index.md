@@ -63,12 +63,4 @@ Need help or have questions? We’re here to assist you:
 - **Support Chat** → Available 24/7 in the bottom-right corner of our console
 - **Email** → help@medjed.ai
 - **Discord** → Join our community for help and discussions
-- **Documentation** → Browse our guides, API reference, and troubleshooting tips
-
-## Further Reading
-
-- [Quickstart Guide](guides/quickstart)
-- [GPU Instances Overview](instances)
-- [API Reference](api-reference)
-- [Examples and Tutorials](examples)
 
