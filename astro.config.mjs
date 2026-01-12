@@ -88,23 +88,45 @@ export default defineConfig({
 							collapsed: false,
 							items: [
 								{ label: 'Introduction', slug: '' },
-								{ label: 'Quickstart', slug: 'guides/quickstart' },
+								{ label: 'Quickstart', slug: 'guides/quickstart' }
 							],
 						},
 						{
-							label: 'Instances',
+							label: 'VMs',
 							collapsed: false,
-							autogenerate: { directory: 'instances' },
-						},
-						{
-							label: 'Examples',
-							collapsed: false,
-							autogenerate: { directory: 'examples' },
+							items: [
+								{ label: 'VMs Overview', slug: 'vms' },
+								{ label: 'Pricing', slug: 'vms/pricing' },
+								{
+									label: 'Choosing VMs',
+									collapsed: false,
+									items: [
+										{ label: 'SSH Setup', slug: 'vms/ssh' },
+										{ label: 'SSH Troubleshooting', slug: 'vms/ssh' },
+										{ label: 'Advanced SSH Config', slug: 'vms/ssh' }
+									]
+								},
+								{
+									label: 'Connecting to VMs',
+									collapsed: false,
+									items: [
+										{ label: 'SSH Setup', slug: 'vms/ssh' },
+										{ label: 'SSH Connection', slug: 'vms/ssh' },
+										{ label: 'Advanced SSH Config', slug: 'vms/ssh' }
+									]
+								},
+								{ label: 'Managing VMs', slug: 'vms/ssh' }
+							],
 						},
 						{
 							label: 'Storage',
 							collapsed: false,
 							autogenerate: { directory: 'storage' },
+						},
+						{
+							label: 'Examples',
+							collapsed: false,
+							autogenerate: { directory: 'examples' },
 						},
 						{
 							label: 'Bare Metal GPUs',
@@ -114,7 +136,21 @@ export default defineConfig({
 						{
 							label: 'Reference',
 							collapsed: false,
-							autogenerate: { directory: 'reference' },
+							items: [
+								{ label: 'Billing Information', slug: 'reference/billing-information' },
+								{ label: 'Referral Programs', slug: 'reference/referrals' },
+								{ label: 'Manage Public Keys', slug: 'reference/public-keys' },
+								{
+									label: 'Hosting',
+									collapsed: false,
+									items: [
+										{ label: 'SSH Setup', slug: 'vms/ssh' },
+										{ label: 'SSH Connection', slug: 'vms/ssh' },
+										{ label: 'Advanced SSH Config', slug: 'vms/ssh' }
+									]
+								},
+								{ label: 'AI Tooling', slug: 'reference/ai-tooling' }
+							],
 						}
 					],
 		}),
