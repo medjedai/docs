@@ -1,20 +1,21 @@
 ---
 title: Billing information
-description: Comprehensive guide to billing, payments, and invoicing for Medjed AI services.
+description: Comprehensive guide to pay-as-you-go billing, payments, and invoicing for Medjed AI services.
 ---
 
 ## Billing Cycle
 
-Medjed AI uses a monthly billing cycle. Your billing period starts on the day you sign up and renews automatically each month.
+Medjed AI uses a pay-as-you-go billing model. You are charged for resources based on actual usage, with no fixed monthly commitments.
 
 ## Payment Methods
 
-We accept the following payment methods:
+We accept the following payment methods through Stripe:
 
 - Credit Cards (Visa, Mastercard, American Express)
-- Debit Cards with Visa/Mastercard logo
-- PayPal
 - Bank Transfers (for enterprise customers)
+- USDC (USD Coin) cryptocurrency recharge
+
+If you need to recharge using other cryptocurrencies, please contact our administrators for assistance.
 
 ## Cost Calculation
 
@@ -25,24 +26,12 @@ We accept the following payment methods:
 - **Storage**: Charged per GB per month for both persistent and temporary storage
 - **Network Usage**: Charged per GB for outgoing traffic (incoming traffic is free)
 
-### Additional Services
-
-- **API Access**: Usage-based pricing per request
-- **Support Plans**: Monthly subscription fees for premium support
-- **Custom Solutions**: Quoted on a case-by-case basis
-
 ## Invoices
 
-- Invoices are generated automatically at the end of each billing cycle
-- Invoices include detailed breakdown of all charges
+- Invoices are generated automatically based on your usage: daily for high-volume users, weekly for standard users, or monthly for low-volume users
+- Invoices include detailed breakdown of all charges by resource type and usage period
 - Invoices can be accessed from your account dashboard
 - Invoice PDF downloads are available for record-keeping
-
-## Payment Terms
-
-- Payment is due upon receipt of invoice
-- Late payments may incur a 5% late fee per month
-- Failed payments may result in service suspension
 
 ## Refund Policy
 
@@ -57,20 +46,10 @@ We accept the following payment methods:
 - Tax rates vary by jurisdiction
 - VAT IDs are accepted for business customers
 
-## Account Credits
-
-- Credits can be applied to your account for promotional purposes
-- Credits expire 12 months from the date of issuance
-- Credits cannot be refunded or transferred to other accounts
-
 ## Billing Support
 
 If you have any questions about your bill, please contact our support team at:
 - Email: billing@medjed.ai
 - Support Portal: [Medjed AI Support](https://support.medjed.ai)
 
-## Further reading
-
-- [FAQs](/reference/faq/)
-- [Referral Program](/reference/referrals/)
 
