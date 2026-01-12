@@ -101,7 +101,12 @@ export default defineConfig({
 							collapsed: false,
 							autogenerate: { directory: 'examples' },
 						},
-												{
+						{
+							label: 'Storage',
+							collapsed: false,
+							autogenerate: { directory: 'storage' },
+						},
+						{
 							label: 'Bare Metal GPUs',
 							collapsed: false,
 							autogenerate: { directory: 'bare-metal-gpus' },
