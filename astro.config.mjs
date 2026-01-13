@@ -92,13 +92,13 @@ export default defineConfig({
 							],
 						},
 						{
-							label: 'VMs',
+							label: 'GPU VMs',
 							collapsed: false,
 							items: [
-								{ label: 'VMs Overview', slug: 'vms' },
-								{ label: 'Pricing', slug: 'vms/pricing' },
+								{ label: 'GPU VMs Overview', slug: 'vms' },
+								{ label: 'GPU VMs Pricing', slug: 'vms/pricing' },
 								{
-									label: 'Choosing VMs',
+									label: 'Choosing GPU VMs',
 									collapsed: false,
 									items: [
 										{ label: 'SSH Setup', slug: 'vms/ssh' },
@@ -107,7 +107,7 @@ export default defineConfig({
 									]
 								},
 								{
-									label: 'Connecting to VMs',
+									label: 'Connecting to GPU VMs',
 									collapsed: false,
 									items: [
 										{ label: 'SSH Setup', slug: 'vms/ssh' },
@@ -115,7 +115,7 @@ export default defineConfig({
 										{ label: 'Advanced SSH Config', slug: 'vms/ssh' }
 									]
 								},
-								{ label: 'Managing VMs', slug: 'vms/ssh' }
+								{ label: 'Managing GPU VMs', slug: 'vms/ssh' }
 							],
 						},
 						{

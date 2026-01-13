@@ -1,46 +1,103 @@
 ---
-title: VMs Overview
-description: Learn about Medjed AI VMs, including pricing, configuration, and connection methods.
+title: GPU Virtual Machines
+menu: VMs
+order: 1
+description: Learn about Medjed AI GPU Virtual Machines (VMs), including features, specifications, use cases, and best practices for AI/ML workloads.
 ---
 
+Medjed AI GPU Virtual Machines (VMs) provide high-performance computing resources with NVIDIA GPUs for accelerating AI/ML workloads, scientific computing, and data processing tasks. Our GPU VMs offer scalable, on-demand access to NVIDIA GPUs, enabling you to accelerate computationally intensive workloads by 10x to 100x compared to CPU-only systems.
 
-Welcome to the Medjed AI VMs documentation. This section provides comprehensive information about our virtual machine offerings, including pricing, configuration options, and connection methods.
+### Key Benefits
 
-## What are VMs?
+| Benefit | Description |
+|---------|-------------|
+| **Exceptional Performance** | Accelerate AI/ML workloads with NVIDIA's latest GPUs |
+| **Flexible Scaling** | Choose from 1 to 8 GPUs per instance |
+| **Fast Deployment** | Launch GPU VMs in approximately 10 milliseconds |
+| **Cost-Effective** | Pay-as-you-go pricing with no long-term commitments |
+| **Secure Isolation** | Isolated virtual environments with built-in security features |
+| **Easy Management** | User-friendly dashboard for VM provisioning and monitoring |
 
-Virtual Machines (VMs) are virtualized compute resources that allow you to run applications and workloads in a flexible, scalable environment. Medjed AI offers a variety of VM types to suit different use cases, from general-purpose computing to high-performance GPU workloads.
+## GPU Types and Specifications
 
-## Available VM Types
+Medjed AI offers a range of NVIDIA GPUs to meet different workload requirements:
 
-Medjed AI provides several VM categories:
+| GPU Model | GPU Memory | Typical Use Cases | Performance Profile |
+|-----------|------------|------------------|--------------------|
+| NVIDIA H100 | 80GB HBM3 | Large-scale AI training, deep learning inference | Highest performance for AI/ML workloads |
+| NVIDIA A100 | 40GB/80GB SXM4 | AI/ML training, scientific computing, data analytics | Industry-standard for enterprise AI workloads |
+| NVIDIA L40S | 48GB GDDR6 | AI content creation, graphics rendering, inference | Optimized for AI visualization and content generation |
+| NVIDIA RTX A6000 | 48GB GDDR6 | Professional visualization, rendering, AI research | High-performance GPU for creative and research workloads |
 
-- **CPU VMs**: General-purpose VMs optimized for everyday computing tasks
-- **GPU VMs**: High-performance VMs with NVIDIA GPUs for AI/ML workloads
-- **Bare Metal VMs**: Dedicated physical servers for maximum performance and control
+## Architecture
 
-## Key Features
+Each Medjed AI GPU VM consists of NVIDIA GPU(s), CPU, system memory, NVMe SSD storage, and a high-bandwidth network interface. VMs feature:
 
-- **Flexible Configuration**: Choose from various CPU, GPU, memory, and storage options
-- **Fast Provisioning**: Deploy VMs in minutes
-- **High Performance**: Optimized for AI/ML, data processing, and scientific computing
-- **Secure**: Isolated environments with built-in security features
-- **Cost-Effective**: Pay-as-you-go pricing with no long-term commitments
+- **Virtual Network Interface**: Dedicated for each VM with up to 100 Gbps bandwidth
+- **Storage Options**: NVMe SSD boot disk, additional data disks, and optional shared storage
 
-## Getting Started with VMs
+## Use Cases
 
-1. **Choose a VM Type**: Select the appropriate VM category based on your workload requirements
-2. **Configure Your VM**: Customize CPU, GPU, memory, and storage options
-3. **Deploy Your VM**: Provision the VM through the Medjed AI dashboard
-4. **Connect to Your VM**: Use SSH or other connection methods to access your VM
-5. **Manage Your VM**: Monitor performance, adjust resources, and manage your VM lifecycle
+Medjed AI GPU VMs are ideal for:
+
+- **AI/ML Training**: Train deep learning models faster with GPU acceleration
+- **Inference**: Deploy and run AI models with low latency
+- **Scientific Computing**: Accelerate complex simulations and calculations
+- **Data Analytics**: Process large datasets with GPU-accelerated frameworks
+- **AI Content Creation**: Generate AI-powered content and graphics
+
+## Getting Started
+
+To get started with Medjed AI GPU VMs:
+
+1. **Evaluate Requirements**: Determine the GPU type, memory, and resources needed for your workload
+2. **Configure & Deploy**: Use the Medjed AI dashboard to provision your GPU VM
+3. **Connect**: Access your VM via SSH and verify GPU availability with `nvidia-smi`
+4. **Install Frameworks**: Set up your preferred AI frameworks (PyTorch, TensorFlow, etc.)
+
+For detailed instructions, see our [QuickStart Guide](../guides/quickstart.mdx).
+
+## Best Practices
+
+### GPU Selection
+- Match GPU model and memory to workload requirements
+- Evaluate performance-to-cost ratio
+
+### Cost Optimization
+- Right-size instances to avoid over-provisioning
+- Release unused VMs and storage to stop charges
+- Monitor usage to optimize allocation
+
+### Performance Optimization
+- Use GPU-optimized frameworks and libraries
+- Optimize batch sizes for efficient GPU memory usage
+- Implement fast data loading techniques
+- Consider distributed training for large models
+
+### Security
+- Use SSH keys for secure access
+- Configure firewalls to restrict network access
+- Encrypt sensitive data at rest and in transit
+- Keep OS and applications updated
+
+## Troubleshooting
+
+### Common Issues
+
+| Issue | Resolution |
+|-------|------------|
+| GPU Not Detected | Verify GPU drivers with `nvidia-smi` |
+| Low GPU Utilization | Optimize workload and batch processing |
+| Memory Errors | Reduce batch size or use a GPU with more memory |
+| Network Issues | Check firewall and network settings |
 
 ## Next Steps
 
-- [VM Pricing](pricing): Learn about our VM pricing models
-- [Choosing a VM](choosing-vms): Guidance on selecting the right VM for your needs
-- [Connecting to VMs](connecting-to-vms): Instructions for accessing your VMs
-- [VM FAQ](faq): Answers to common VM questions
+- [GPU VM Pricing](pricing): Review pricing models and costs
+- [Choosing the Right GPU](choosing-vms): Guidance on selecting GPUs for your workload
+- [Connecting to GPU VMs](connecting-to-vms): Detailed access instructions
+- [Support Portal](https://cloud.medjed.ai/support): Get assistance from our team
 
-## Support
+---
 
-If you need assistance with your VMs, please contact our support team through the Medjed AI dashboard or email us at support@medjed.ai.
+*Last updated: 2026-01-13*
