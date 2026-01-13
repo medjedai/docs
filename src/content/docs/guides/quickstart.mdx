@@ -48,12 +48,14 @@ import { Aside } from '@astrojs/starlight/components';
 
 ### Browse the Machine Market
 
-1. From the navigation menu, select **Machine Market**
+1. From the navigation menu, select **[Machine Market](https://cloud.medjed.ai/machine-market)**
 2. Filter machines by:
-   - GPU type (NVIDIA A100, H100, etc.)
+   - GPU type (NVIDIA H200, H100, RTX PRO 6000, etc.)
    - GPU count and memory
    - CPU cores and RAM
    - Price per hour
+
+![Medjed AI Machine Market](/assets/machine-market-1.png)
 
 ### Deploy an Instance
 
@@ -68,8 +70,8 @@ import { Aside } from '@astrojs/starlight/components';
    - Additional environment variables (if needed)
 
 4. Click **Deploy** to launch your instance
-5. Wait for the instance to start (cached images launch quickly, fresh pulls may take 10-60 minutes)
-6. Once running, use the **Connect** button to access your instance via SSH or Jupyter
+5. Instances typically start in approximately 10 milliseconds, with no waiting required
+6. Once running, use the **Connect** button to access your instance via SSH
 
 ![Medjed AI Machine Market](/assets/machine-market.png)
 
@@ -77,20 +79,24 @@ import { Aside } from '@astrojs/starlight/components';
 
 ### Manage Instances
 
-1. Navigate to **My Machines** to view all your instances
+1. Navigate to **[My Machines](https://cloud.medjed.ai/my-machines)** to view all your instances
 2. Available actions:
    - **Start/Stop**: Pause/resume instance (storage still incurs charges when stopped)
    - **Connect**: Access via SSH or Jupyter
    - **Edit**: Modify instance settings (limited to certain configurations)
    - **Delete**: Permanently remove instance and associated resources
 
+![Medjed AI My Machines](/assets/my-machines.png)
+
 ### Manage Storage
 
-1. Navigate to **My Storages** to view all your storage volumes
+1. Navigate to **[My Storages](https://cloud.medjed.ai/my-storages)** to view all your storage volumes
 2. Available actions:
    - **Attach**: Connect storage to running instances
    - **Detach**: Disconnect storage from instances
    - **Release**: Permanently delete storage and stop charges
+
+![Medjed AI My Storages](/assets/my-storages.png)
 
 ### Important Billing Notes
 
@@ -98,6 +104,8 @@ import { Aside } from '@astrojs/starlight/components';
 - **Storage Billing**: Charged per GB per hour regardless of instance state
 - **Auto-stop**: Instances will automatically stop when your balance reaches zero
 - **Resource Release**: Always release unused instances and storage to avoid unnecessary charges
+
+![Medjed AI My Billing](/assets/my-billing.png)
 
 ## 5. Common Questions
 
