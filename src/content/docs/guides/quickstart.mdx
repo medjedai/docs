@@ -1,0 +1,127 @@
+---
+title: QuickStart
+description: Get started with Medjed.ai in just a few steps.
+---
+
+This QuickStart will guide you through setting up your Medjed.ai account and running your first instance in just a few steps.
+
+## 1. Sign Up & Add Credit
+
+### Create Your Account
+
+1. Visit [Medjed.ai](https://cloud.medjed.ai/register)
+2. Click **Sign Up** and complete the registration process
+3. Verify your email address to activate your account
+
+![Medjed AI Register](/assets/register.png)
+
+### Add Payment Method
+
+1. Log in to your [Medjed.ai](https://cloud.medjed.ai/login) account
+2. Navigate to the **Recharge** section
+3. Add a valid credit card or set up USDC cryptocurrency payment
+4. Deposit funds to your account (minimum $5.00 recommended)
+
+![Medjed AI Recharge](/assets/recharge.png)
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip">You can check your deposit status and current balance in the Balance section.
+![Medjed AI Balance](/assets/balance.png)</Aside>
+
+## 2. Prepare to Connect
+
+### Set Up SSH Access
+
+1. Generate an SSH key pair on your local machine:
+   ```bash
+   ssh-keygen -t ed25519 -C "your_email@example.com"
+   ```
+
+2. Navigate to the **[Public Keys](https://cloud.medjed.ai/public-keys)** page in Medjed.ai
+3. Upload your public SSH key (typically `~/.ssh/id_ed25519.pub`)
+4. Your SSH key is now configured for accessing instances
+
+![Medjed AI Public Keys](/assets/public-keys.png)
+
+## 3. Launch Your First Instance
+
+### Browse the Machine Market
+
+1. From the navigation menu, select **Machine Market**
+2. Filter machines by:
+   - GPU type (NVIDIA A100, H100, etc.)
+   - GPU count and memory
+   - CPU cores and RAM
+   - Price per hour
+
+### Deploy an Instance
+
+1. Click on a machine that meets your requirements
+2. From the "System Disk cloned from" dropdown, select either a fresh system image or a previously detached disk in Detached State
+
+![Medjed AI System Disk](/assets/system-disk.png)
+
+3. Configure instance settings:
+   - Disk size (permanent, cannot be changed later)
+   - SSH key selection
+   - Additional environment variables (if needed)
+
+4. Click **Deploy** to launch your instance
+5. Wait for the instance to start (cached images launch quickly, fresh pulls may take 10-60 minutes)
+6. Once running, use the **Connect** button to access your instance via SSH or Jupyter
+
+![Medjed AI Machine Market](/assets/machine-market.png)
+
+## 4. Manage Your Resources
+
+### Manage Instances
+
+1. Navigate to **My Machines** to view all your instances
+2. Available actions:
+   - **Start/Stop**: Pause/resume instance (storage still incurs charges when stopped)
+   - **Connect**: Access via SSH or Jupyter
+   - **Edit**: Modify instance settings (limited to certain configurations)
+   - **Delete**: Permanently remove instance and associated resources
+
+### Manage Storage
+
+1. Navigate to **My Storages** to view all your storage volumes
+2. Available actions:
+   - **Attach**: Connect storage to running instances
+   - **Detach**: Disconnect storage from instances
+   - **Release**: Permanently delete storage and stop charges
+
+### Important Billing Notes
+
+- **Instance Billing**: Charged per hour based on GPU type and resources
+- **Storage Billing**: Charged per GB per hour regardless of instance state
+- **Auto-stop**: Instances will automatically stop when your balance reaches zero
+- **Resource Release**: Always release unused instances and storage to avoid unnecessary charges
+
+## 5. Common Questions
+
+### What is the minimum deposit amount?
+The minimum deposit amount varies by payment method. Check the Billing section for current requirements.
+
+### How do I avoid instance interruptions?
+Enable auto-recharge in the Billing settings to automatically add funds when your balance falls below a threshold.
+
+### Can I change the disk size after deployment?
+No, disk size is permanent. Allocate more space than you think you need to avoid interruptions.
+
+### What happens if my balance runs out?
+Running instances will automatically stop. Storage will continue to accrue charges until released.
+
+## 6. Next Steps
+
+- **Explore Templates**: Browse available templates for different AI frameworks and applications
+- **Learn SSH Commands**: Familiarize yourself with basic SSH commands for instance management
+- **Set Up Monitoring**: Configure alerts for instance performance and billing
+- **Explore Advanced Features**: Learn about custom templates, shared storage, and API access
+- **Read the Documentation**: Check out our [VMs documentation](/vms/) for more detailed information
+
+## Support
+
+If you encounter any issues, please contact our support team through the Medjed.ai dashboard or email us at support@medjed.ai.
+
