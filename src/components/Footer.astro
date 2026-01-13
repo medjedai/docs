@@ -1,6 +1,9 @@
 ---
 // 导入Starlight的默认页脚组件
 import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
+
+// 获取当前年份，用于自动更新版权信息
+const currentYear = new Date().getFullYear();
 ---
 
 <!-- 使用默认页脚并添加英伟达图标 -->
@@ -13,7 +16,7 @@ import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
     </div>
     <!-- 版权信息 -->
     <div class="copyright-container" style="display: flex; justify-content: center; margin-bottom: 1rem;">
-      <p style="color: var(--sl-color-text-muted); font-size: 0.9rem;">© 2025 medjed.ai. All rights reserved.</p>
+      <p style="color: var(--sl-color-text-muted); font-size: 0.9rem;">© {currentYear} medjed.ai. All rights reserved.</p>
     </div>
   </div>
 </footer>
